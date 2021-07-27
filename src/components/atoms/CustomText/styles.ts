@@ -6,8 +6,8 @@ interface TextType extends TextProps {
 }
 
 export const Text = styled.Text<TextType>`
-  font-size: 24px;
+  font-size: ${({ theme }) => theme.metrics.px(24)}px;
   font-weight: bold;
-  color: ${(props) => props.color || 'white'};
-  margin-top: 12px;
+  color: ${({ color, theme }) => color || theme.colors.white};
+  margin-top: ${({ theme }) => theme.metrics.px(12)}px;
 `;

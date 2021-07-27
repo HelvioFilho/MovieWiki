@@ -3,10 +3,28 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { StyleSheet, Text, View } from 'react-native';
 import { CustomText, Logo } from './src/components';
+import {
+  useFonts,
+  SourceSansPro_400Regular,
+  SourceSansPro_700Bold,
+  SourceSansPro_600SemiBold,
+  SourceSansPro_900Black
+} from '@expo-google-fonts/source-sans-pro';
 
 import { defaultTheme } from './src/global/styles/theme';
+import AppLoading from 'expo-app-loading';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    SourceSansPro_400Regular,
+    SourceSansPro_700Bold,
+    SourceSansPro_600SemiBold,
+    SourceSansPro_900Black
+  });
+  if (!fontsLoaded) {
+    return <AppLoading />
+  }
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <View style={styles.container}>
