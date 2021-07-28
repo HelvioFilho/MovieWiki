@@ -5,7 +5,9 @@ const { Navigator, Screen } = createStackNavigator();
 
 export function AppRoutes() {
   return (
-    <Navigator>
+    <Navigator
+      headerMode="none"
+    >
 
       <Screen
         name="Home"

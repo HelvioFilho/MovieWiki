@@ -13,10 +13,10 @@ export interface ContainerProps {
 interface Props extends ContainerProps {
   children: ReactNode;
 }
-export function Container({ children, ...ContainerProps }: Props) {
+export function Container({ children, ...props }: Props) {
   return (
     <ContainerAll
-      {...ContainerProps}
+      {...props}
     >
       {children}
     </ContainerAll>
