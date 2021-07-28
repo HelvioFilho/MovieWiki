@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { Text } from './styles';
 
 interface Props {
-  children: ReactNode;
+  children?: ReactNode;
   color?: string;
 }
 

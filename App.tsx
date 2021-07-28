@@ -1,8 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { StyleSheet, Text, View } from 'react-native';
-import { CustomText, Logo } from './src/components';
+
 import {
   useFonts,
   SourceSansPro_400Regular,
@@ -13,6 +12,7 @@ import {
 
 import { defaultTheme } from './src/global/styles/theme';
 import AppLoading from 'expo-app-loading';
+import { Routes } from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -26,22 +26,10 @@ export default function App() {
   }
 
   return (
+
     <ThemeProvider theme={defaultTheme}>
-      <View style={styles.container}>
-        <Logo />
-        <CustomText>Apenas um texto</CustomText>
-        {/* <Text>Apenas um texto</Text> */}
-        <StatusBar style="auto" />
-      </View>
+      <Routes />
     </ThemeProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#161616',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
