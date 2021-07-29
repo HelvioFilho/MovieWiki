@@ -18,6 +18,15 @@ export const HeaderGradient = styled(LinearGradient)`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding-horizontal: ${({ theme }) => theme.metrics.px(24)}px;
+  padding: 0 ${({ theme }) => theme.metrics.px(24)}px;
   padding-top: ${({ theme }) => theme.metrics.px(56)}px;
+`;
+
+export const ButtonsView = styled.View`
+  display: flex;
+  width: 100%;
+  margin-top: ${({ theme }) => theme.metrics.px(12)}px;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
 `;
