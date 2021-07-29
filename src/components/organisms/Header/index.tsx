@@ -1,7 +1,7 @@
 import React from 'react';
 import { defaultTheme } from '../../../global/styles/theme';
 import { CustomText, Logo } from '../../atoms';
-import { Tag, IconButton } from '../../molecules';
+import { Tag, IconButton, PlayButton } from '../../molecules';
 import { HeaderContainer, HeaderGradient, HeaderImageBackground, ButtonsView } from './styles';
 
 export function Header() {
@@ -15,8 +15,8 @@ export function Header() {
           <CustomText size={18}>A Ameaça Fantasma</CustomText>
           <ButtonsView>
             <IconButton label="Favoritos" name="add-circle-outline" onPress={() => { }} />
+            <PlayButton onPress={() => { }} />
             <IconButton label="Saiba mais" name="information-circle-outline" onPress={() => { }} />
-
           </ButtonsView>
         </HeaderGradient>
 
