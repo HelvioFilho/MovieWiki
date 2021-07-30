@@ -1,19 +1,17 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
+import { CardProps } from '../../../utils/interface';
 
 import { CardContainer, CardImage } from './styles';
 
-interface ItemProps {
-  id: string;
-  image_url: string;
-}
-
-interface CardProps {
-  item: ItemProps;
-}
-
 export function Card({ item }: CardProps) {
+  const navigation = useNavigation();
+
   return (
-    <CardContainer activeOpacity={0.8}>
+    <CardContainer
+      onPress={() => navigation.navigate('Detail')}
+      activeOpacity={0.8}
+    >
       <CardImage source={{ uri: item.image_url }} />
     </CardContainer>
   );

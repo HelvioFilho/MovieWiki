@@ -1,19 +1,8 @@
 import React, { ReactNode } from 'react';
+import { ContainerProps } from '../../../utils/interface';
 import { ContainerAll } from './styles';
 
-export interface ContainerProps {
-  direction?: string;
-  align?: string;
-  justify?: string;
-  bg?: string;
-  width?: number;
-  height?: number;
-}
-
-interface Props extends ContainerProps {
-  children: ReactNode;
-}
-export function Container({ children, ...props }: Props) {
+export function Container({ children, ...props }: ContainerProps) {
   return (
     <ContainerAll
       {...props}

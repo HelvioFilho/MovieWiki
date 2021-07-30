@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Card, HomeList, Header } from '../../components';
+import { HomeList, Header } from '../../components';
 import { ScreenScrollContainer } from '../../components/atoms/Container/styles';
 
 export function Home() {
@@ -28,12 +28,15 @@ export function Home() {
 
   return (
     <ScreenScrollContainer>
-      <Header />
+      <Header data={{
+        id: '1',
+        title: 'Episódio I',
+        subtitle: 'A Ameaça Fantasma',
+        type: 'Filme',
+        image_url: 'https://i.pinimg.com/originals/22/4f/9d/224f9d64ad01d1bf5937a46ffe99eaec.jpg',
+      }} />
       <HomeList title="Filmes" data={FAKE_DATA_CHARACTERS} />
       <HomeList title="Personagens" data={FAKE_DATA_CHARACTERS} />
-
     </ScreenScrollContainer>
-    // <Container align='flex-start' justify='flex-start'>
-    // </Container>
   );
 }

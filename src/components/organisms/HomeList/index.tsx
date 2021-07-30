@@ -1,20 +1,11 @@
 import React from 'react';
-import { FlatList, FlatListProps } from 'react-native';
+import { FlatList } from 'react-native';
 import { defaultTheme } from '../../../global/styles/theme';
+import { HomeListProps } from '../../../utils/interface';
 import { CustomText } from '../../atoms';
 import { Card } from '../../molecules';
 
 import { ListContainer } from './styles';
-
-interface DataHomeProps {
-  id: string;
-  image_url: string;
-}
-
-interface HomeListProps {
-  data: DataHomeProps[];
-  title: string;
-}
 
 export function HomeList({ data, title }: HomeListProps) {
   return (

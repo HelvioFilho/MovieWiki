@@ -1,17 +1,10 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { MetricsProps } from '../../../utils/interface';
 import { CustomText } from '../../atoms';
 
 import { TagContainer } from './styles';
 
-export interface TagProps {
-  children: ReactNode;
-  mt?: number;
-  mb?: number;
-  ml?: number;
-  mr?: number;
-}
-
-export function Tag({ children, ...props }: TagProps) {
+export function Tag({ children, ...props }: MetricsProps) {
   return (
     <TagContainer {...props}>
       <CustomText

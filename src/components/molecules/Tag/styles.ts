@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
-import { TagProps } from '.';
+import { MetricsProps } from '../../../utils/interface';
 
-export const TagContainer = styled.View<TagProps>`
+export const TagContainer = styled.View<MetricsProps>`
   display: flex;
   align-items: center;
   justify-content: center;

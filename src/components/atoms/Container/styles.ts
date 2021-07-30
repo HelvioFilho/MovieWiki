@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { ContainerProps } from '.';
+import { ContainerProps } from '../../../utils/interface';
 
 export const ContainerAll = styled.View<ContainerProps>`
   display: flex;

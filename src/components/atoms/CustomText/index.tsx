@@ -1,18 +1,6 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Text } from './styles';
-import { colors } from '../../../global/styles/colors';
-import { fonts } from '../../../global/styles/fonts';
-
-export interface TextProps {
-  children?: ReactNode;
-  color?: keyof typeof colors;
-  fontFamily?: keyof typeof fonts;
-  size?: number;
-  mt?: number;
-  mb?: number;
-  ml?: number;
-  mr?: number;
-}
+import { TextProps } from '../../../utils/interface';
 
 export function CustomText({ children, ...props }: TextProps) {
   return (

@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { TextProps } from '.';
+import { TextProps } from '../../../utils/interface';
 
 export const Text = styled.Text<TextProps>`
   font-family: ${({ theme, fontFamily }) => theme.fonts[fontFamily || 'regular']};

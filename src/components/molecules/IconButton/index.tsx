@@ -1,15 +1,10 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { CustomText } from '../../atoms';
 import { defaultTheme } from '../../../global/styles/theme';
 
 import { ButtonContainer } from './styles';
-
-interface IconProps {
-  name: React.ComponentProps<typeof Ionicons>['name'];
-  onPress: () => void;
-  label: ReactNode;
-}
+import { IconProps } from '../../../utils/interface';
 
 export function IconButton({ name, label, onPress }: IconProps) {
   return (

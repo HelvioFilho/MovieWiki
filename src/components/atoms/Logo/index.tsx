@@ -1,15 +1,7 @@
 import React from 'react';
 import logoImage from '../../../assets/LogoEmpire.png';
+import { LogoProps, sizes } from '../../../utils/interface';
 import { LogoImage } from './styles';
-
-const sizes = {
-  small: 28,
-  large: 64,
-}
-
-interface LogoProps {
-  size?: keyof typeof sizes;
-}
 
 export function Logo({ size }: LogoProps) {
 
