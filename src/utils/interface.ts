@@ -3,11 +3,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../global/styles/colors';
 import { fonts } from '../global/styles/fonts';
 
-export interface ItemProps {
-  id: string;
-  image_url: string;
-}
-
 export interface ContainerProps {
   children: ReactNode;
   direction?: string;
@@ -45,10 +40,6 @@ export interface ImageType {
   size: number;
 }
 
-export interface CardProps {
-  item: ItemProps;
-}
-
 export interface PlayButtonProps {
   onPress: () => void;
 }
@@ -59,7 +50,7 @@ export interface IconProps extends PlayButtonProps {
   label: ReactNode;
 }
 
-interface DataItemProps {
+export interface DataItemProps {
   id: string;
   image_url: string;
   title?: string;
