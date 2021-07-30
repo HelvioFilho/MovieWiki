@@ -18,7 +18,7 @@ export function HomeList({ data, title }: HomeListProps) {
       <FlatList
         horizontal
         data={data}
-        renderItem={({ item }) => <Card item={item} />}
+        renderItem={({ item }) => <Card data={item} />}
         keyExtractor={(item) => item.id}
         contentContainerStyle={{
           paddingTop: defaultTheme.metrics.px(12),
