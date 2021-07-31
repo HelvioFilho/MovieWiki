@@ -1,11 +1,11 @@
 import React from 'react';
 import { defaultTheme } from '../../../global/styles/theme';
 import { DataProps } from '../../../utils/interface';
-import { CustomText, Logo } from '../../atoms';
+import { CustomText, GoBack, Logo } from '../../atoms';
 import { Tag, IconButton, PlayButton } from '../../molecules';
 import { HeaderContainer, HeaderGradient, HeaderImageBackground, ButtonsView } from './styles';
 
-export function Header({ data }: DataProps) {
+export function Header({ data, onDetail }: DataProps) {
   return (
     <HeaderContainer>
       <HeaderImageBackground
@@ -13,7 +13,13 @@ export function Header({ data }: DataProps) {
         source={{ uri: data.image_url }}
       >
         <HeaderGradient colors={[defaultTheme.colors.dark, 'transparent', defaultTheme.colors.dark]}>
-          <Logo size="small" />
+          {
+            onDetail
+              ?
+              <GoBack />
+              :
+              <Logo size="small" />
+          }
           <Tag mt={200}>{data.type}</Tag>
           <CustomText
             fontFamily="bold"
@@ -26,7 +32,13 @@ export function Header({ data }: DataProps) {
           <ButtonsView>
             <IconButton label="Favoritos" name="add-circle-outline" onPress={() => { }} />
             <PlayButton onPress={() => { }} />
-            <IconButton label="Saiba mais" name="information-circle-outline" onPress={() => { }} />
+            {
+              !onDetail
+                ?
+                <IconButton label="Saiba mais" name="information-circle-outline" onPress={() => { }} />
+                :
+                <></>
+            }
           </ButtonsView>
         </HeaderGradient>
       </HeaderImageBackground>

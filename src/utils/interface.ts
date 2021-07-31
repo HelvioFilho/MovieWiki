@@ -61,6 +61,7 @@ export interface DataItemProps {
 
 export interface DataProps {
   data: DataItemProps;
+  onDetail?: boolean;
 }
 
 export interface HomeListProps {

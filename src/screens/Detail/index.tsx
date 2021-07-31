@@ -8,7 +8,7 @@ export function Detail() {
 
   return (
     <ScreenScrollContainer>
-      <Header data={data} />
+      <Header data={data} onDetail />
     </ScreenScrollContainer>
   );
 }
