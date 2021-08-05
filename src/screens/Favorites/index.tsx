@@ -6,8 +6,8 @@ import { FavoritesContainer } from './styles';
 
 export function Favorites() {
   return (
-    <ScreenScrollContainer>
-      <CustomText>Favorites</CustomText>
+    <ScreenScrollContainer withPadding>
+      <CustomText fontFamily="bold" size={28} >Favorites</CustomText>
     </ScreenScrollContainer>
   );
 }

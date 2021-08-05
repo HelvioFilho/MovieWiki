@@ -7,7 +7,7 @@ import { Card } from '../../molecules';
 
 import { ListContainer } from './styles';
 
-export function HomeList({ data, title }: HomeListProps) {
+export function HomeList({ dataType, data, title }: HomeListProps) {
   return (
     <ListContainer>
       <CustomText
@@ -18,13 +18,12 @@ export function HomeList({ data, title }: HomeListProps) {
       <FlatList
         horizontal
         data={data}
-        renderItem={({ item }) => <Card data={item} />}
-        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <Card data={{ ...item, type: dataType }} />}
+        keyExtractor={(item) => String(item.id)}
         contentContainerStyle={{
           paddingTop: defaultTheme.metrics.px(12),
           paddingBottom: defaultTheme.metrics.px(24),
           paddingLeft: defaultTheme.metrics.px(24),
-
         }}
       />
     </ListContainer>

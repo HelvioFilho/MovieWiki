@@ -13,4 +13,5 @@ export const ContainerAll = styled.View<ContainerProps>`
 
 export const ScreenScrollContainer = styled.ScrollView<ContainerProps>`
   background-color: ${({ bg, theme }) => bg || theme.colors.dark};
+  padding: ${({ withPadding, theme }) => withPadding ? `${theme.metrics.px(56)}px ${theme.metrics.px(24)}px` : 0};
 `;

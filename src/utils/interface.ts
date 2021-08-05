@@ -11,6 +11,7 @@ export interface ContainerProps {
   bg?: string;
   width?: number;
   height?: number;
+  withPadding?: boolean;
 }
 
 export interface MetricsProps {
@@ -19,6 +20,7 @@ export interface MetricsProps {
   mb?: number;
   ml?: number;
   mr?: number;
+  lh?: number;
 }
 
 export interface TextProps extends MetricsProps {
@@ -51,12 +53,12 @@ export interface IconProps extends PlayButtonProps {
 }
 
 export interface DataItemProps {
-  id: string;
+  id: number;
   image_url: string;
   title?: string;
   subtitle?: string;
-  type?: string;
   description?: string;
+  type?: string;
 }
 
 export interface DataProps {
@@ -67,6 +69,13 @@ export interface DataProps {
 export interface HomeListProps {
   data: DataItemProps[];
   title: string;
+  dataType: string;
+}
+
+export interface StorageMovie {
+  [id: number]: {
+    data: DataItemProps;
+  }
 }
 
 // interface Props extends ContainerProps {
