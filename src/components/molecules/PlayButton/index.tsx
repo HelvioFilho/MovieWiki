@@ -14,7 +14,7 @@ export function PlayButton({ onPress }: PlayButtonProps) {
         size={defaultTheme.metrics.px(18)}
         color={defaultTheme.colors.black}
       />
-      <CustomText fontFamily="bold" size={14} color="black">
+      <CustomText mt={2} ml={4} fontFamily="bold" size={14} color="black">
         Assistir
       </CustomText>
     </ButtonContainer>

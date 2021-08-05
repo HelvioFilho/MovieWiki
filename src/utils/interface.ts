@@ -73,7 +73,7 @@ export interface HomeListProps {
 }
 
 export interface StorageMovie {
-  [id: number]: {
+  [id: string]: {
     data: DataItemProps;
   }
 }
