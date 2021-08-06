@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { defaultTheme } from '../../../global/styles/theme';
 import { useFavorites } from '../../../service/hooks';
 import { DataProps } from '../../../utils/interface';
 import { CustomText, GoBack, Logo } from '../../atoms';
 import { Tag, IconButton, PlayButton } from '../../molecules';
 import { HeaderContainer, HeaderGradient, HeaderImageBackground, ButtonsView } from './styles';
+import { useDataStore } from '../../../service/stores';
 
 export function Header({ data, onDetail }: DataProps) {
   const { addFavorites, removeFavorite, getFavorites } = useFavorites();
   const [loading, setLoading] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
+  const navigation = useNavigation();
+  const { setData } = useDataStore();
 
   async function handleAddFavorite() {
     await addFavorites(data);
@@ -28,6 +32,11 @@ export function Header({ data, onDetail }: DataProps) {
       .keys(favorites)
       .filter((fv) => fv === `${data.id}${data.title}`).length > 0);
     setLoading(false);
+  }
+
+  function handlePlay() {
+    setData(data);
+    navigation.navigate('Watch')
   }
 
   useEffect(() => {
@@ -68,7 +77,7 @@ export function Header({ data, onDetail }: DataProps) {
               label={isFavorite ? "Rem. Favoritos" : "Add Favoritos"}
               name={isFavorite ? "remove-circle-outline" : "add-circle-outline"}
             />
-            <PlayButton onPress={() => { }} />
+            <PlayButton onPress={() => handlePlay()} />
             {
               !onDetail
                 ?
