@@ -59,6 +59,7 @@ export interface DataItemProps {
   subtitle?: string;
   description?: string;
   type?: string;
+  trailer_url: string;
 }
 
 export interface DataProps {

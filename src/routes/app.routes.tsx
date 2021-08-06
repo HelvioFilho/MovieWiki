@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Detail, Favorites, Home, Search } from '../screens';
+import { Detail, Favorites, Home, Search, Watch } from '../screens';
 import { BottomBar } from '../components';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationHelpers, ParamListBase, TabNavigationState } from '@react-navigation/native';
@@ -50,6 +50,10 @@ export function AppRoutes() {
       <Screen
         name="Detail"
         component={Detail}
+      />
+      <Screen
+        name="Watch"
+        component={Watch}
       />
     </Navigator>
   );
