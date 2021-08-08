@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
-import { CustomText } from '../../components';
-import { ScreenScrollContainer } from '../../components/atoms/Container/styles';
+import React, { useEffect, useState } from 'react';
+import { CustomText, GridList } from '../../components';
+import { ScreenContainer } from '../../components/atoms/Container/styles';
 import { useFavorites } from '../../service/hooks';
 import { useIsFocused } from '@react-navigation/native';
+import { DataItemProps } from '../../utils/interface';
 
 
 export function Favorites() {
   const isFocused = useIsFocused();
+  const [favoritesList, setFavoritesList] = useState<DataItemProps[]>([]);
   const { getFavorites } = useFavorites();
 
   async function callGetFavorites() {
     const favorites = await getFavorites();
-    console.log("############ inicio ##################");
-    console.log(favorites);
-    console.log("############ Fim ##################");
+    setFavoritesList(favorites);
   }
 
   useEffect(() => {
@@ -21,8 +21,9 @@ export function Favorites() {
   }, [isFocused]);
 
   return (
-    <ScreenScrollContainer withPadding>
-      <CustomText fontFamily="bold" size={28} >Favorites</CustomText>
-    </ScreenScrollContainer>
+    <ScreenContainer withPadding>
+      <CustomText fontFamily="bold" size={28} mb={24}>Favoritos</CustomText>
+      <GridList dataType="favorites" data={favoritesList} />
+    </ScreenContainer>
   );
 }

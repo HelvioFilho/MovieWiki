@@ -67,10 +67,33 @@ export interface DataProps {
   onDetail?: boolean;
 }
 
+export const cardSizes = {
+  small: {
+    h: 124,
+    w: 88,
+  },
+  large: {
+    h: 150,
+    w: 102,
+  }
+}
+
+export interface CardProps extends DataProps {
+  size?: keyof typeof cardSizes;
+}
+
+export interface CardStyle {
+  size: {
+    h: number;
+    w: number;
+  }
+}
+
 export interface HomeListProps {
   data: DataItemProps[];
-  title: string;
-  dataType: string;
+  title?: string;
+  dataType?: string;
+  loading?: boolean;
 }
 
 export interface StorageMovie {
