@@ -9,8 +9,7 @@ import { HeaderContainer, HeaderGradient, HeaderImageBackground, ButtonsView } f
 import { useDataStore } from '../../../service/stores';
 
 export function Header({ data, onDetail }: DataProps) {
-  const { addFavorites, removeFavorite, getFavorites } = useFavorites();
-  const [loading, setLoading] = useState(false);
+  const { addFavorites, removeFavorite, checkFavorites } = useFavorites();
   const [isFavorite, setIsFavorite] = useState(false);
   const navigation = useNavigation();
   const { setData } = useDataStore();
@@ -26,17 +25,20 @@ export function Header({ data, onDetail }: DataProps) {
   }
 
   async function checkIsFavorite() {
-    setLoading(true);
-    const favorites = await getFavorites();
+    const favorites = await checkFavorites();
     setIsFavorite(Object
       .keys(favorites)
       .filter((fv) => fv === `${data.id}${data.title}`).length > 0);
-    setLoading(false);
   }
 
   function handlePlay() {
     setData(data);
-    navigation.navigate('Watch')
+    navigation.navigate('Watch');
+  }
+
+  function handleDetails() {
+    setData(data);
+    navigation.navigate('Detail');
   }
 
   useEffect(() => {
@@ -81,7 +83,7 @@ export function Header({ data, onDetail }: DataProps) {
             {
               !onDetail
                 ?
-                <IconButton label="Saiba mais" name="information-circle-outline" onPress={() => { }} />
+                <IconButton label="Saiba mais" name="information-circle-outline" onPress={() => handleDetails()} />
                 :
                 <></>
             }
