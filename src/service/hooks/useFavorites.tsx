@@ -47,19 +47,6 @@ export function useFavorites() {
     }
   }
 
-  async function checkFavorites(): Promise<StorageMovie> {
-    let response = {};
-    try {
-      const storageData = await AsyncStorage.getItem('@movieWiki:favorites');
-      const data = storageData ? (JSON.parse(storageData) as StorageMovie) : {};
-      response = data;
-    } catch (e) {
-      response = {};
-    } finally {
-      return response;
-    }
-  }
-
   async function removeFavorite(id: string): Promise<string> {
     let response = '';
     try {
@@ -81,7 +68,6 @@ export function useFavorites() {
   return {
     addFavorites: addFavorites,
     getFavorites: getFavorites,
-    checkFavorites: checkFavorites,
     removeFavorite: removeFavorite,
   }
 }

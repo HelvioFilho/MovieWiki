@@ -4,5 +4,6 @@ export const colors = {
   black: '#000000',
   dark: '#161616',
   red: '#E60C0D',
-  input: '#5B5B5B'
+  input: '#5B5B5B',
+  darkTransparent: 'rgba(22,22,22, 0.7)',
 }

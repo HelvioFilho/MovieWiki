@@ -27,6 +27,7 @@ export interface TextProps extends MetricsProps {
   color?: keyof typeof colors;
   fontFamily?: keyof typeof fonts;
   size?: number;
+  align?: string;
 }
 
 export const sizes = {
@@ -59,7 +60,7 @@ export interface DataItemProps {
   subtitle?: string;
   description?: string;
   type?: string;
-  trailer_url: string;
+  trailer_url?: string;
 }
 
 export interface DataProps {

@@ -9,8 +9,6 @@ import noDataFavorites from '../../../assets/no-favorites.png'
 import noDataSearch from '../../../assets/no-result.png'
 import { defaultTheme } from '../../../global/styles/theme';
 
-
-
 export function GridList({ data, dataType, loading }: HomeListProps) {
   return (
     <FlatList

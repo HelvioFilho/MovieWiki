@@ -4,31 +4,48 @@ import { defaultTheme } from '../../../global/styles/theme';
 import { useFavorites } from '../../../service/hooks';
 import { DataProps } from '../../../utils/interface';
 import { CustomText, GoBack, Logo } from '../../atoms';
-import { Tag, IconButton, PlayButton } from '../../molecules';
+import { Tag, IconButton, PlayButton, StateModal } from '../../molecules';
 import { HeaderContainer, HeaderGradient, HeaderImageBackground, ButtonsView } from './styles';
 import { useDataStore } from '../../../service/stores';
 
 export function Header({ data, onDetail }: DataProps) {
-  const { addFavorites, removeFavorite, checkFavorites } = useFavorites();
+  const { addFavorites, removeFavorite, getFavorites } = useFavorites();
+  const [favoriteType, setFavoriteType] = useState('');
   const [isFavorite, setIsFavorite] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
   const navigation = useNavigation();
   const { setData } = useDataStore();
 
+  function closeModal() {
+    setTimeout(() => {
+      setShowModal(false);
+    }, 1500);
+  }
+
   async function handleAddFavorite() {
     await addFavorites(data);
+    setFavoriteType('added');
+    setShowModal(true);
     checkIsFavorite();
+    closeModal();
   }
 
   async function handleDeleteFavorite() {
     await removeFavorite(`${data.id}${data.title}`);
+    setFavoriteType('removed');
+    setShowModal(true);
     checkIsFavorite();
+    closeModal();
   }
 
   async function checkIsFavorite() {
-    const favorites = await checkFavorites();
-    setIsFavorite(Object
-      .keys(favorites)
-      .filter((fv) => fv === `${data.id}${data.title}`).length > 0);
+    const favorites = await getFavorites();
+    setIsFavorite(favorites
+      .filter(
+        (fv) => `${fv.id}${fv.title}` === `${data.id}${data.title}`
+      )
+      .length > 0);
   }
 
   function handlePlay() {
@@ -40,6 +57,7 @@ export function Header({ data, onDetail }: DataProps) {
     setData(data);
     navigation.navigate('Detail');
   }
+
 
   useEffect(() => {
     checkIsFavorite();
@@ -79,7 +97,9 @@ export function Header({ data, onDetail }: DataProps) {
               label={isFavorite ? "Rem. Favoritos" : "Add Favoritos"}
               name={isFavorite ? "remove-circle-outline" : "add-circle-outline"}
             />
-            <PlayButton onPress={() => handlePlay()} />
+            {data.trailer_url &&
+              <PlayButton onPress={() => handlePlay()} />
+            }
             {
               !onDetail
                 ?
@@ -90,6 +110,10 @@ export function Header({ data, onDetail }: DataProps) {
           </ButtonsView>
         </HeaderGradient>
       </HeaderImageBackground>
+      <StateModal
+        type={favoriteType}
+        visible={showModal}
+      />
     </HeaderContainer>
   );
 }
