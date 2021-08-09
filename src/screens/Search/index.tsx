@@ -14,7 +14,6 @@ export function Search() {
     setLoading(true);
     const result = await getSearchResult(query);
     setResults(result);
-    console.log(result);
     setLoading(false);
   }
 

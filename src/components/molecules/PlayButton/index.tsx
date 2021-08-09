@@ -4,11 +4,11 @@ import { defaultTheme } from '../../../global/styles/theme';
 import { PlayButtonProps } from '../../../utils/interface';
 import { CustomText } from '../../atoms';
 
-import { ButtonContainer } from './styles';
+import { PlayButtonContainer } from './styles';
 
 export function PlayButton({ onPress }: PlayButtonProps) {
   return (
-    <ButtonContainer onPress={onPress}>
+    <PlayButtonContainer onPress={onPress}>
       <Ionicons
         name="play"
         size={defaultTheme.metrics.px(18)}
@@ -17,6 +17,6 @@ export function PlayButton({ onPress }: PlayButtonProps) {
       <CustomText mt={2} ml={4} fontFamily="bold" size={14} color="black">
         Assistir
       </CustomText>
-    </ButtonContainer>
+    </PlayButtonContainer>
   );
 }

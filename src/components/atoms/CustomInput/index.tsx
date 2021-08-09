@@ -1,14 +1,14 @@
 import React from 'react';
 import { TextInputProps } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
 
-import { InputContainer } from './styles';
+import { InputContainer, SearchInput } from './styles';
 import { defaultTheme } from '../../../global/styles/theme';
+import { TextInput } from 'react-native-gesture-handler';
 
 export function CustomInput({ ...rest }: TextInputProps) {
   return (
     <InputContainer>
-      <TextInput
+      {/* <TextInput
         placeholderTextColor={defaultTheme.colors.input}
         style={{
           fontFamily: defaultTheme.fonts.semiBold,
@@ -17,6 +17,10 @@ export function CustomInput({ ...rest }: TextInputProps) {
           width: "100%",
           color: defaultTheme.colors.white,
         }}
+        {...rest}
+      /> */}
+      <SearchInput
+        placeholderTextColor={defaultTheme.colors.input}
         {...rest}
       />
     </InputContainer>
