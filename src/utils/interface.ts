@@ -49,7 +49,6 @@ export interface PlayButtonProps {
 
 export interface IconProps extends PlayButtonProps {
   name: React.ComponentProps<typeof Ionicons>['name'];
-  // onPress: () => void;
   label: ReactNode;
 }
 
@@ -103,6 +102,7 @@ export interface StorageMovie {
   }
 }
 
-// interface Props extends ContainerProps {
-//   children: ReactNode;
-// }
+export interface CustomModalProps {
+  visible: boolean;
+  type: string;
+}

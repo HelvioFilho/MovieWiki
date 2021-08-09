@@ -1,7 +1,6 @@
 import { DataItemProps } from "../../utils/interface";
 import { api } from "../api";
 
-
 export function useGetData() {
 
   async function getMovies(): Promise<DataItemProps[]> {

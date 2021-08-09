@@ -5,8 +5,6 @@ import { CardProps, cardSizes } from '../../../utils/interface';
 
 import { CardContainer, CardImage } from './styles';
 
-
-
 export function Card({ data, size }: CardProps) {
   const { setData } = useDataStore();
   const navigation = useNavigation();

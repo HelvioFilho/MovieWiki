@@ -5,7 +5,6 @@ import { useFavorites } from '../../service/hooks';
 import { useIsFocused } from '@react-navigation/native';
 import { DataItemProps } from '../../utils/interface';
 
-
 export function Favorites() {
   const isFocused = useIsFocused();
   const [favoritesList, setFavoritesList] = useState<DataItemProps[]>([]);

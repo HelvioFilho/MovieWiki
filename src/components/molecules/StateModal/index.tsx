@@ -1,20 +1,15 @@
 import React from 'react';
+import { Modal } from 'react-native';
 import { CustomText } from '../../atoms';
 
-import { FavoriteImage, ModalBackgroundContainer, ModalContainer, ModalContentContainer } from './styles';
-
+import { FavoriteImage, ModalBackgroundContainer, ModalContentContainer } from './styles';
 import favoriteAdded from '../../../assets/favorite-add.png';
 import favoriteRemoved from '../../../assets/favorite-remove.png';
+import { CustomModalProps } from '../../../utils/interface';
 
-
-interface ModalProps {
-  visible: boolean;
-  type: string;
-}
-
-export function StateModal({ visible, type }: ModalProps) {
+export function StateModal({ visible, type }: CustomModalProps) {
   return (
-    <ModalContainer
+    <Modal
       visible={visible}
       transparent={true}
       animationType="fade"
@@ -36,6 +31,6 @@ export function StateModal({ visible, type }: ModalProps) {
           </CustomText>
         </ModalContentContainer>
       </ModalBackgroundContainer>
-    </ModalContainer>
+    </Modal>
   );
 }

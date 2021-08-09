@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { CardStyle, ImageType } from '../../../utils/interface';
+import { CardStyle } from '../../../utils/interface';
 
 export const CardContainer = styled.TouchableOpacity<CardStyle>`
   width: ${({ theme, size }) => theme.metrics.px(size.w)}px;

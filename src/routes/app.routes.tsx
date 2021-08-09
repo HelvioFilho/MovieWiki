@@ -36,7 +36,6 @@ function BottomRoute() {
   )
 }
 
-
 export function AppRoutes() {
   const { Navigator, Screen } = createStackNavigator();
   return (

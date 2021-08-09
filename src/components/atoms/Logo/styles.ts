@@ -7,5 +7,4 @@ export const LogoImage = styled.Image<ImageType>`
   width: ${({ size, theme }) => theme.metrics.px(size)}px;
   height: ${({ size, theme }) => theme.metrics.px(size)}px;
   margin-left: ${({ theme }) => theme.metrics.px(16)}px;
-  
 `;

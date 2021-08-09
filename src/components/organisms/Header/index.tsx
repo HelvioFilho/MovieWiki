@@ -58,7 +58,6 @@ export function Header({ data, onDetail }: DataProps) {
     navigation.navigate('Detail');
   }
 
-
   useEffect(() => {
     checkIsFavorite();
   }, [])
