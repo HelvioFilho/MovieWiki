@@ -3,41 +3,32 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Detail, Favorites, Home, Search, Watch } from '../screens';
 import { BottomBar } from '../components';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationHelpers, ParamListBase, TabNavigationState } from '@react-navigation/native';
-import { BottomTabBarOptions, BottomTabDescriptorMap, BottomTabNavigationEventMap } from '@react-navigation/bottom-tabs/lib/typescript/src/types';
-
-export type BottomTabBarProps = BottomTabBarOptions & {
-  state: TabNavigationState<ParamListBase>;
-  descriptors: BottomTabDescriptorMap;
-  navigation: NavigationHelpers<ParamListBase, BottomTabNavigationEventMap>;
-};
+import { ParamListBase } from '@react-navigation/native';
 
 function BottomRoute() {
-  const Tabs = createBottomTabNavigator<ParamListBase>();
+  const { Navigator, Screen } = createBottomTabNavigator<ParamListBase>();
   return (
-    <Tabs.Navigator
-      tabBar={(props: BottomTabBarProps) => (
-        <BottomBar {...props} />
-      )}>
-      <Tabs.Screen
+    <Navigator
+      tabBar={props => <BottomBar {...props} />}>
+      <Screen
         name="Home"
         component={Home} />
-      <Tabs.Screen
+      <Screen
         options={{ tabBarLabel: 'Pesquisar' }}
         name="Search"
         component={Search}
       />
-      <Tabs.Screen
+      <Screen
         options={{ tabBarLabel: 'Favoritos' }}
         name="Favorites"
         component={Favorites}
       />
-    </Tabs.Navigator>
+    </Navigator>
   )
 }
 
 export function AppRoutes() {
-  const { Navigator, Screen } = createStackNavigator();
+  const { Navigator, Screen } = createStackNavigator<ParamListBase>();
   return (
     <Navigator
       headerMode="none"

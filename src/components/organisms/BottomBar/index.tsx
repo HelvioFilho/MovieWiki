@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { BarItem, BottomBarContainer } from './styles';
 import { CustomText } from '../../atoms';
 import { defaultTheme } from '../../../global/styles/theme';
-import { BottomTabBarProps } from '../../../routes/app.routes';
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
 const routeIcons: { [key: string]: string } = {
   Home: 'home-outline',
@@ -11,8 +11,7 @@ const routeIcons: { [key: string]: string } = {
   Favorites: 'heart-outline',
 }
 
-export function BottomBar({ ...props }: BottomTabBarProps) {
-  const { state, navigation, descriptors } = props;
+export function BottomBar({ state, navigation, descriptors }: BottomTabBarProps) {
   return (
     <BottomBarContainer>
       {state.routes.map((route, index) => {
