@@ -30,7 +30,7 @@ This project was developed using the following technologies:
 Clone the project and access the folder
 
 ```bash
-$ git clone https://github.com/HelvioFilho/MovieWiki.git && cd MovieWiki
+$ git clone https://github.com/HelvioFilho/StarWarsWiki.git && cd StarWarsWiki
 ```
 
 Follow the steps below
@@ -44,10 +44,10 @@ $ expo start
 
 ## Project
 
-application that lists movies and characters showing their information.
+Star Wars Wiki is an application designed to show information about movies and characters from the Star Wars universe.
 
 ## Application
 
 Use the link below to try the app at the [expo](https://expo.io/)
 
-[![run in expo](https://img.shields.io/badge/Movie%20Wiki-161616.svg?style=for-the-badge&logo=EXPO&labelColor=FFFFFF&logoColor=000)](https://expo.dev/@loihve/MovieWiki)
+[![run in expo](https://img.shields.io/badge/Movie%20Wiki-161616.svg?style=for-the-badge&logo=EXPO&labelColor=FFFFFF&logoColor=000)](https://expo.dev/@loihve/StarWarsWiki)

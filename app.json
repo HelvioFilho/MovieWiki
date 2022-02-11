@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MovieWiki",
-    "slug": "MovieWiki",
+    "name": "StarWarsWiki",
+    "slug": "StarWarsWiki",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -29,6 +29,6 @@
       "favicon": "./assets/favicon.png"
     },
     "description": "application that lists movies and characters showing their information.",
-    "githubUrl": "https://github.com/HelvioFilho/MovieWiki"
+    "githubUrl": "https://github.com/HelvioFilho/StarWarsWiki"
   }
 }
