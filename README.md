@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Movie Wiki" title="MovieWiki" src=".github/logo.svg" />
+    <img alt="Star Wars Wiki" title="StarWarsWiki" src=".github/newLogo.svg" />
 </h1>
 
 <p align="center">
