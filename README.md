@@ -50,4 +50,4 @@ Star Wars Wiki is an application designed to show information about movies and c
 
 Use the link below to try the app at the [expo](https://expo.io/)
 
-[![run in expo](https://img.shields.io/badge/Movie%20Wiki-161616.svg?style=for-the-badge&logo=EXPO&labelColor=FFFFFF&logoColor=000)](https://expo.dev/@loihve/StarWarsWiki)
+[![run in expo](https://img.shields.io/badge/Star%20Wars%20Wiki-161616.svg?style=for-the-badge&logo=EXPO&labelColor=FFFFFF&logoColor=000)](https://expo.dev/@loihve/StarWarsWiki)
