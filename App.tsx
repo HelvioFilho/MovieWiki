@@ -13,6 +13,7 @@ import {
 import { defaultTheme } from './src/global/styles/theme';
 import AppLoading from 'expo-app-loading';
 import { Routes } from './src/routes';
+import { StatusBar } from 'react-native';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -28,6 +29,7 @@ export default function App() {
   return (
 
     <ThemeProvider theme={defaultTheme}>
+      <StatusBar backgroundColor={'transparent'} barStyle="light-content" translucent={true} />
       <Routes />
     </ThemeProvider>
   );

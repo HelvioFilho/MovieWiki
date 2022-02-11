@@ -28,7 +28,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "application that lists movies and characters showing their information.",
+    "description": "Star Wars Wiki is an application designed to show information about movies and characters from the Star Wars universe.",
     "githubUrl": "https://github.com/HelvioFilho/StarWarsWiki"
   }
 }
